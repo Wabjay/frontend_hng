@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="description"
+        content="Jimoh O. Abdulwahab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="wabjay.jpg" type="image/x-icon">
+    <link rel="icon" type="image/png" href="wabjay.jpggit " />
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Jimoh O. Abdulwahab</title>
+</head>
+<body  class="card">
+    
+    
+    <div class="container">
+        <p class="heading">Jimoh O. Abdulwahab</p>
+        <div class="img_container">           
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front second">
+                        <img src="wabjay.jpg" alt="Jimoh O. Abdulwahab" class="image">
+                        <p class="about">About Me</p>
+        </div>
+                    <div class="flip-box-back">
+                            <h4 class="text_left">About Me</h4>
+                        <p class="text_left">I'm a front-end developer, I have prioritized refining customer satisfaction in approaches to a host of projects I
+                            have overseen which has in turn endeared me to clients. Having devoted my time to science and technology, I
+                            recognize the quest of man to use the web as a tool for immense possibilities and I am keen to help actualize the
+                            vision.
+                        </p>
+                        <p class="text_left">
+                            I surely realize the need for continuous updates, as it is the only constant in the field of technology to provide the
+                            best website development experience to my customers.
+                            </p>
+                        <!-- <p>Learn More</p> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text">Frontend Stack</p>
+        <a href="https://github.com/Wabjay" target="_blank">Github Repository</a>
+        <div class="flex">
+            <div>
+                <p class="text">Date: </p>
+                <p class="text" id="date"></p>
+            </div>
+            <div>
+                <p class="text">Time: </p>
+        <p class="text" id="time"></p>
+            </div>
+        
+        </div>
+        
+
+
+    </div>
+
+    <script>
+        function setCurrentTime() {
+  var myDate = new Date();
+
+  let daysList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  let monthsList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+          let date = myDate.getDate();
+  let month = monthsList[myDate.getMonth()];
+  let year = myDate.getFullYear();
+  let day = daysList[myDate.getDay()];
+
+  let today = ` ${day}, ${date} ${month} ${year}`;
+
+  let amOrPm;
+  let twelveHours = function() {
+    if (myDate.getHours() > 12) {
+      amOrPm = 'PM';
+      let twentyFourHourTime = myDate.getHours();
+      let conversion = twentyFourHourTime - 12;
+      return `${conversion}`
+
+    } else {
+      amOrPm = 'AM';
+      return `${myDate.getHours()}`
+    }
+  };
+  let hours = twelveHours();
+  let minutes = myDate.getMinutes();
+  let second = myDate.getSeconds();
+  let seconds = second < 10 ? `0${second}` : second;
+
+  let currentTime = `${hours}:${minutes}:${seconds} ${amOrPm}`;
+  
+  document.getElementById('date').innerText = today 
+  document.getElementById('time').innerText = currentTime
+        }
+
+setInterval(function() {
+  setCurrentTime();
+}, 1000);
+    </script>
+</body>
+</html>
