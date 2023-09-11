@@ -20,7 +20,7 @@
             <div class="flip-box">
                 <div class="flip-box-inner">
                     <div class="flip-box-front second">
-                        <img src="wabjay.jpg" alt="Jimoh O. Abdulwahab" class="image">
+                        <img src="wabjay.jpg" alt="Jimoh O. Abdulwahab" data-testid="slackDisplayImage" class="image">
                         <p class="about">About Me</p>
         </div>
                     <div class="flip-box-back">
@@ -40,16 +40,16 @@
                 </div>
             </div>
         </div>
-        <p class="text">Frontend Stack</p>
-        <a href="https://github.com/Wabjay/frontend_hng" target="_blank">Github Repository</a>
+        <p class="text" data-testid="myTrack">Frontend Track</p>
+        <a href="https://github.com/Wabjay/frontend_hng" target="_blank" data-testid="githubURL">Github Repository</a>
         <div class="flex">
             <div>
                 <p class="text">Date: </p>
-                <p class="text" id="date"></p>
+                <p class="text" id="currentDayOfTheWeek" data-testid="currentDayOfTheWeek"></p>
             </div>
             <div>
                 <p class="text">Time: </p>
-        <p class="text" id="time"></p>
+        <p class="text" id="currentUTCTime" data-testid="currentUTCTime"></p>
             </div>
         
         </div>
@@ -92,8 +92,8 @@
 
   let currentTime = `${hours}:${minutes}:${seconds} ${amOrPm}`;
   
-  document.getElementById('date').innerText = today 
-  document.getElementById('time').innerText = currentTime
+  document.getElementById('currentDayOfTheWeek').innerText = today 
+  document.getElementById('currentUTCTime').innerText = currentTime
         }
 
 setInterval(function() {
